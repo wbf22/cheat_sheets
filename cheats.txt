@@ -1,0 +1,36 @@
+sudo chown -R wbf22 /var/www (give ownership of directory)
+
+https://github.com/nvm-sh/nvm#installing-and-updating (installing nvm)
+
+sudo systemctl status mongodb (mongo status)
+
+export NODE_OPTIONS=--openssl-legacy-provider (for error: "error:0308010C:digital envelope routines::unsupported")
+
+cd /etc/nginx/sites-enabled
+sudo ln -s ../sites-available/xxxxxxxx.freedommuskrats.com . (link this into the sites-enabled directory. check with 'ls -al')
+
+sudo nginx -s reload
+
+
+db.pcspecs.insertOne({  type: "Graphics Card",
+  name: "Nvidia GeForce RTX 3080",
+  dateCreated: 1648945224393,
+  votes: 12,    
+});                                                         (inserting into mongodb)
+
+curl -X POST -H "Content-Type: application/json" \-d '{"type": "Graphics Card", "name": "Nvidia GeForce RTX 3080", "dateCreated": 1648945224393, "votes": 12}' \http://localhost:3001/api/recommendations
+
+
+db.getCollection("pcspecs").find();                        (getting from mongodb)
+
+quit()                                                       (quit mongo shell)
+
+
+db.xxxxxxxxxxxx.remove ({})                             (delete collection mongo shell)
+
+stat -c "Owner is:%U Group name is: %G" .  (see owner of current folder)
+
+
+cerbot https tutorial https://certbot.eff.org/instructions?ws=nginx&os=ubuntufocal
+
+sudo certbot --nginx         (run cerbot and get a https certificate)
